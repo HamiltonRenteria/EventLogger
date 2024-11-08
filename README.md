@@ -44,17 +44,21 @@ El proyecto está organizado en dos carpetas principales:
 
 2. **Configurar la Base de Datos**
 
-   "ConnectionStrings": {
-     "DefaultConnection": "Server=TU_SERVIDOR;Database=Registration;User Id=TU_USUARIO;Password=TU_CONTRASEÑA;"
+     ```bash
+     "ConnectionStrings": {
+          "DefaultConnection": "Server=TU_SERVIDOR;Database=Registration;User Id=TU_USUARIO;Password=TU_CONTRASEÑA;"
      }
 
 3. **Migraciones y Base de Datos**
+     ```bash
      dotnet ef migrations add InitialCreate
      dotnet ef database update
 
 4. **Ejecutar la API**
+     ```bash
      dotnet run
-     Nota: La API debería estar disponible en https://localhost:7026/.
+
+Nota: La API debería estar disponible en https://localhost:7026/.
 
 
 ## Configuración del Frontend (Aplicación en Angular)
@@ -62,7 +66,7 @@ El proyecto está organizado en dos carpetas principales:
 1. **Instalar Dependencias**
 
    ```bash
-   cd ../frontend
+     cd ../frontend
      npm install
 
 
@@ -71,6 +75,9 @@ El proyecto está organizado en dos carpetas principales:
    Abre el archivo src/app/services/event.service.ts y ajusta la URL base de la API si es necesario.
 
 3. **Ejecutar la Aplicación Angular**
-     ng serve
-     Nota: La aplicación estará disponible en http://localhost:4200.
+     ```bash
+          ng serve
 
+Nota: La aplicación estará disponible en http://localhost:4200.
+
+## Flujo de Autenticación
