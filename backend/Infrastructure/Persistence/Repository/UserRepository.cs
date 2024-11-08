@@ -7,9 +7,9 @@ namespace Infrastructure.Persistence.Repository
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly DatabaseContext _databaseContext;
+        private readonly EventLoggerContext _databaseContext;
 
-        public UserRepository(DatabaseContext databaseContext) : base(databaseContext)
+        public UserRepository(EventLoggerContext databaseContext) : base(databaseContext)
         {
             _databaseContext = databaseContext;
         }

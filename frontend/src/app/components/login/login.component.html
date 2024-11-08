@@ -1,0 +1,12 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form (ngSubmit)="onLogin()">
+      <input type="text" id="username" class="fadeIn second" name="login" placeholder="Username">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <input type="submit" class="fadeIn fourth" value="Register" [routerLink]="['/create']">
+    </form>   
+  </div>
+</div>

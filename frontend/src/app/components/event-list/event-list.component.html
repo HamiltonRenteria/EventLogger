@@ -1,0 +1,53 @@
+   <br>
+   <br>
+   <br>
+   <div class="container">
+     <div class="card col-10">
+       <div class="card-body">
+         <div class="row">
+           <div class="col">
+            <div>
+              <h3>Filtros</h3>
+              <label for="fechaInicio">Fecha Inicio: </label>
+              <input class="form-control" type="date" id="fechaInicio" [(ngModel)]="fechaInicio">
+            
+              <label for="fechaFin">Fecha Fin: </label>
+              <input class="form-control" type="date" id="fechaFin" [(ngModel)]="fechaFin">
+            
+              <label for="tipoEvento">Tipo de Evento: </label>
+              <select class="form-control" id="tipoEvento" [(ngModel)]="tipoEvento">
+                <option value="">Todos</option>
+                <option value="API">API</option>
+                <option value="Manual">Manual</option>
+              </select>
+              <br>
+              <button class="btn btn-primary" (click)="getEvents()">Consultar</button>
+              <button class="btn btn-success" [routerLink]="['/register']">Nuevo Registro</button>
+            </div>
+           </div>
+         </div>
+         <hr>
+         <div *ngIf="events.length > 0">
+          <h3>Lista de Eventos</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Tipo de Evento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of events">
+                <td>{{ event.dateEvent | date: 'short' }}</td>
+                <td>{{ event.description }}</td>
+                <td>{{ event.typeEvent }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p *ngIf="events.length === 0">No se encontraron eventos</p>
+        <hr>
+       </div>
+     </div>
+   </div>

@@ -20,7 +20,7 @@ namespace Api.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> RegisterUser([FromForm] UserRequestDto requestDto)
         {
-            var response = await _userApplication.RegisterUser(requestDto);
+            Application.Commons.Bases.BaseResponse<bool> response = await _userApplication.RegisterUser(requestDto);
             return Ok(response);
         }
 
@@ -28,7 +28,7 @@ namespace Api.Controllers
         [HttpPost("Generate/Token")]
         public async Task<IActionResult> GenerateToken([FromBody] TokenRequestDto requestDto)
         {
-            var response = await _userApplication.GenerateToken(requestDto);
+            Application.Commons.Bases.BaseResponse<string> response = await _userApplication.GenerateToken(requestDto);
             return Ok(response);
         }
 

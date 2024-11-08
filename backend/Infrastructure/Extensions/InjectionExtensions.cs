@@ -11,11 +11,12 @@ namespace Infrastructure.Extensions
     {
         public static IServiceCollection AddInjectionInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            string? assembly = typeof(DatabaseContext).Assembly.FullName;
+            string? assembly = typeof(EventLoggerContext).Assembly.FullName;
 
-            _ = services.AddDbContext<DatabaseContext>(
-                option => option.UseInMemoryDatabase(databaseName: "InMemory_DB")
-            );
+            _ = services.AddDbContext<EventLoggerContext>(
+                option => option.UseSqlServer(
+                    configuration.GetConnectionString("PersistenceConnection"),
+                    b => b.MigrationsAssembly(assembly)), ServiceLifetime.Transient);
 
             _ = services.AddTransient<IUnitOfWork, UnitOfWork>();
             _ = services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

@@ -22,6 +22,7 @@ namespace Application.Extensions
             _ = services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             _ = services.AddScoped<IUserApplication, UserApplication>();
+            _ = services.AddScoped<IEventApplication, EventApplication>();
 
             return services;
         }

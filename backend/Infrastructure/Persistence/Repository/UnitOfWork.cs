@@ -5,13 +5,15 @@ namespace Infrastructure.Persistence.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DatabaseContext _databaseContext;
+        private readonly EventLoggerContext _databaseContext;
         public IUserRepository User { get; private set; }
+        public IEventRepository Event { get; private set; }
 
-        public UnitOfWork(DatabaseContext databaseContext)
+        public UnitOfWork(EventLoggerContext databaseContext)
         {
             _databaseContext = databaseContext;
             User = new UserRepository(_databaseContext);
+            Event = new EventRepository(_databaseContext);
         }
 
         public void Dispose()

@@ -1,0 +1,18 @@
+<br>
+<br>
+<br>
+<div class="wrapper fadeInDown">
+<div id="formContent">
+     <form (ngSubmit)="onRegister()">
+     <input type="text" id="email" class="fadeIn second" [(ngModel)]="email" name="email" placeholder="Email" required>
+     <input type="text" id="username" class="fadeIn second" [(ngModel)]="username" name="username" placeholder="User Name" required>
+     <input type="text" id="password" class="fadeIn second" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+     <input type="text" id="confirmPassword" class="fadeIn second" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
+
+     <input type="submit" class="fadeIn fourth" value="Registrar">
+
+     <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+     <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+     </form>   
+</div>
+</div>

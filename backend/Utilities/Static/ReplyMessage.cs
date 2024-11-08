@@ -9,6 +9,8 @@
 
         // REGISTER MESSAGES
         public const string MESSAGE_REGISTER = "Se registró exitosamente.";
+        public const string MESSAGE_QUERY = "Se consultó exitosamente.";
+        public const string MESSAGE_QUERY_EMPTY = "No se encontraron registros.";
 
         // TRANSVERSAL MESSAGES
         public const string MESSAGE_FAILED = "Operación fallida.";

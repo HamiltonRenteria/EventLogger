@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="card col-8">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <form (ngSubmit)="registerEvent()">
+            <div class="form-group">
+              <div class="form-group">
+                <label for="description">Descripción: </label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="event.description" name="descripcion" required>
+              </div>
+              <br>
+              <label for="typeEvent">Tipo de Evento:</label>
+              <select class="form-control form-control-lg" id="typeEvent" [(ngModel)]="event.typeEvent" name="tipoEvento" required>
+                <option value="API">API</option>
+                <option value="Manual">Manual</option>
+              </select>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Registrar Evento</button>
+            <p>{{ message }}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
